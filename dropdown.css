@@ -24,7 +24,7 @@
     cursor: pointer;
     padding: 0;
 }
-.dropdown > .link:focus, .link:hover {
+.dropdown.active > .link, .link:hover { /* keep the text black, focus and hoever*/
     color: black;
 }
 .dropdown {
@@ -35,7 +35,7 @@
     left: 0;
     top: calc(100% + .25rem);
     background: white;
-    top: calc(100% + .25rem);
+    /* top: calc(100% + .25rem);   */
     padding: .75rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1); 
@@ -45,8 +45,21 @@
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out; 
    
 }
-.dropdown > .link:focus + .dropdown-menu { /* to test before implementing the javascript*/
+.dropdown.active > .link + .dropdown-menu { /* to test before implementing the javascript*/
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+}
+.information-grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 2rem;
+}
+.dropdown-link{
+    display: flex;
+    flex-direction: column;
+    gap:.25rem;
+}
+.login-form > input {
+    margin-bottom: .5rem;
 }
