@@ -1,0 +1,52 @@
+/* https://www.youtube.com/watch?v=S-VeYcOCFZw&t=297s&ab_channel=WebDevSimplified */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background: #F3F3F3;
+    display: flex;
+    align-items: baseline;
+    padding: .5rem;
+    gap: 1rem;;
+}
+
+.link {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #777;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+.dropdown > .link:focus, .link:hover {
+    color: black;
+}
+.dropdown {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + .25rem);
+    background: white;
+    top: calc(100% + .25rem);
+    padding: .75rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1); 
+    opacity: 0;  
+    pointer-events: none;
+    transform: translateY(-10px); /* why can we use 0px here*/
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out; 
+   
+}
+.dropdown > .link:focus + .dropdown-menu { /* to test before implementing the javascript*/
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
